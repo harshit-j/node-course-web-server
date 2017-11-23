@@ -27,13 +27,19 @@ app.use((req, res, next) => {
     	}
     })
     next();
-})
+});
 app.get('/', (req, res) => {
     res.render('home.hbs', {
         pageTitle: 'Home Page',
         welcomeMessage: "Welcome to Express"
     })
-})
+});
+
+app.get('/project',(req,res) => {
+	res.render('project.hbs',{
+		pageTitle: 'Project Page'		
+	})
+});
 
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
